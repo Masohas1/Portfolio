@@ -75,56 +75,56 @@ hamburgerMenu.addEventListener("click", () => {
 
 //GSAP LOAD WEBSITE
 
-// const tl = gsap.timeline();
+const tl = gsap.timeline();
 
-// tl.fromTo(".first-name", 7, { xPercent: -150 }, { xPercent: 550 })
-//   .fromTo(".last-name", 7, { xPercent: 150 }, { xPercent: -550 }, "<")
-//   .to(".first", 1, { xPercent: -100 }, "-=5")
-//   .to(".second", 1, { xPercent: 100 }, "<")
-//   .to(".loader", 0.1, { yPercent: -100 }, "-=4")
-//   .fromTo(
-//     ".name-logo",
-//     0.1,
-//     { x: -100, opacity: 0 },
-//     { x: 0, opacity: 1 },
-//     "-=4"
-//   )
-//   .fromTo(
-//     ".hamburger-menu",
-//     0.1,
-//     { x: 100, opacity: 0 },
-//     { x: 0, opacity: 1 },
-//     "-=4"
-//   )
-//   .fromTo(
-//     ".menu-li",
-//     0.3,
-//     { y: -50, opacity: 0 },
-//     { y: 0, opacity: 1, stagger: 0.1 },
-//     "-=4"
-//   )
-//   .fromTo(".image", 0.8, { x: -300, opacity: 0 }, { x: 0, opacity: 1 }, "-=3.8")
-//   .fromTo(
-//     ".start-text > *",
-//     0.8,
-//     { x: 300, opacity: 0 },
-//     { x: 0, opacity: 1, stagger: 0.2 },
-//     "-=3.8"
-//   )
-//   .fromTo(
-//     ".decoration-line:nth-child(2n+1)",
-//     0.8,
-//     { scaleY: 0 },
-//     { scaleY: 1, transformOrigin: "bottom" },
-//     "-=3.3"
-//   )
-//   .fromTo(
-//     ".decoration-line:nth-child(2n)",
-//     2,
-//     { scaleY: 0 },
-//     { scaleY: 1, transformOrigin: "top" },
-//     "-=3.3"
-//   );
+tl.fromTo(".first-name", 7, { xPercent: -150 }, { xPercent: 550 })
+  .fromTo(".last-name", 7, { xPercent: 150 }, { xPercent: -550 }, "<")
+  .to(".first", 1, { xPercent: -100 }, "-=5")
+  .to(".second", 1, { xPercent: 100 }, "<")
+  .to(".loader", 0.1, { yPercent: -100 }, "-=4")
+  .fromTo(
+    ".name-logo",
+    0.1,
+    { x: -100, opacity: 0 },
+    { x: 0, opacity: 1 },
+    "-=4"
+  )
+  .fromTo(
+    ".hamburger-menu",
+    0.1,
+    { x: 100, opacity: 0 },
+    { x: 0, opacity: 1 },
+    "-=4"
+  )
+  .fromTo(
+    ".menu-li",
+    0.3,
+    { y: -50, opacity: 0 },
+    { y: 0, opacity: 1, stagger: 0.1 },
+    "-=4"
+  )
+  .fromTo(".image", 0.8, { x: -300, opacity: 0 }, { x: 0, opacity: 1 }, "-=3.8")
+  .fromTo(
+    ".start-text > *",
+    0.8,
+    { x: 300, opacity: 0 },
+    { x: 0, opacity: 1, stagger: 0.2 },
+    "-=3.8"
+  )
+  .fromTo(
+    ".decoration-line:nth-child(2n+1)",
+    0.8,
+    { scaleY: 0 },
+    { scaleY: 1, transformOrigin: "bottom" },
+    "-=3.3"
+  )
+  .fromTo(
+    ".decoration-line:nth-child(2n)",
+    2,
+    { scaleY: 0 },
+    { scaleY: 1, transformOrigin: "top" },
+    "-=3.3"
+  );
 
 // setting the decorating line for the entire body
 const decorationLines = document.querySelectorAll(".decoration-line");
