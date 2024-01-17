@@ -1,21 +1,22 @@
-//ANIMATING THE MAIN IMAGE ON THE START PAGE
-
 let myPanel = document.getElementById("panel");
 let subpanel = document.getElementById("panel-container");
 
-let mouseX, mouseY;
+const projectPanel = document.querySelectorAll(".panel-project");
 
+let mouseX, mouseY;
 let transformAmount = 3;
 
-function transformPanel(mouseEvent) {
+function transformPanel(panel, subpanel, mouseEvent) {
   mouseX = mouseEvent.pageX;
   mouseY = mouseEvent.pageY;
 
-  const centerX = myPanel.offsetLeft + myPanel.clientWidth / 2;
-  const centerY = myPanel.offsetTop + myPanel.clientHeight / 2;
+  const rect = panel.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2 + window.scrollX;
+  const centerY = rect.top + rect.height / 2 + window.scrollY;
 
-  const percentX = (mouseX - centerX) / (myPanel.clientWidth / 2);
-  const percentY = -((mouseY - centerY) / (myPanel.clientHeight / 2));
+  // Użyj wymiarów obrazu zamiast kontenera
+  const percentX = (mouseX - centerX) / (subpanel.clientWidth / 2);
+  const percentY = -((mouseY - centerY) / (subpanel.clientHeight / 2));
 
   subpanel.style.transform =
     "perspective(400px) rotateY(" +
@@ -25,14 +26,14 @@ function transformPanel(mouseEvent) {
     "deg)";
 }
 
-function handleMouseEnter() {
+function handleMouseEnter(panel, subpanel) {
   setTimeout(() => {
     subpanel.style.transition = "";
   }, 100);
   subpanel.style.transition = "transform 0.1s";
 }
 
-function handleMouseLeave() {
+function handleMouseLeave(panel, subpanel) {
   subpanel.style.transition = "transform 0.1s";
   setTimeout(() => {
     subpanel.style.transition = "";
@@ -41,10 +42,28 @@ function handleMouseLeave() {
   subpanel.style.transform = "perspective(400px) rotateY(0deg) rotateX(0deg)";
 }
 
-myPanel.addEventListener("mousemove", transformPanel);
-myPanel.addEventListener("mouseenter", handleMouseEnter);
-myPanel.addEventListener("mouseleave", handleMouseLeave);
+myPanel.addEventListener("mousemove", (event) =>
+  transformPanel(myPanel, subpanel, event)
+);
+myPanel.addEventListener("mouseenter", () =>
+  handleMouseEnter(myPanel, subpanel)
+);
+myPanel.addEventListener("mouseleave", () =>
+  handleMouseLeave(myPanel, subpanel)
+);
 
+projectPanel.forEach((el) => {
+  const projectSubpanel = el.querySelector(".project-img");
+  el.addEventListener("mousemove", (event) =>
+    transformPanel(el, projectSubpanel, event)
+  );
+  el.addEventListener("mouseenter", () =>
+    handleMouseEnter(el, projectSubpanel)
+  );
+  el.addEventListener("mouseleave", () =>
+    handleMouseLeave(el, projectSubpanel)
+  );
+});
 // DROP-DOWN MENU WHEN YOU PRESS MENU-HAMBURGER
 
 const nav = document.querySelector("nav");
@@ -106,3 +125,10 @@ hamburgerMenu.addEventListener("click", () => {
 //     { scaleY: 1, transformOrigin: "top" },
 //     "-=3.3"
 //   );
+
+// setting the decorating line for the entire body
+const decorationLines = document.querySelectorAll(".decoration-line");
+
+decorationLines.forEach(function (line) {
+  line.style.height = document.body.clientHeight + "px";
+});

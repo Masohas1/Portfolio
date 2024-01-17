@@ -32,7 +32,7 @@ body {
     height: 100vh;
     font-size: 20rem;
     color: transparent;
-    -webkit-text-stroke: 3px #cbcbcb;
+    -webkit-text-stroke: 3px #dfdfdf;
 
 }
 
@@ -166,7 +166,6 @@ nav a {
     background-position: 50% 50%;
     transform: perspective(400px) rotateX(0deg) rotateY(0deg);
     transform-style: preserve-3d;
-    /* box-shadow: 1.5rem 2.5rem 5rem 0.7rem rgba(0, 0, 0, 0.13); */
 }
 
 .panel-content {
@@ -178,11 +177,14 @@ nav a {
     overflow-wrap: break-word;
 }
 
+/* LINE */
+
 .decoration-line {
     position: absolute;
     top: 0;
+    bottom: 0;
     left: 50%;
-    height: 300vh;
+    height: auto;
     width: 1px;
     background-color: black;
     z-index: -1;
@@ -202,7 +204,7 @@ nav a {
     width: 100%;
 }
 
-.my-work h1 {
+.title {
     font-size: 6rem;
     width: 60%;
     margin: 0 auto 100px auto;
@@ -228,14 +230,25 @@ nav a {
     margin-bottom: 100px;
 }
 
+.panel-project {
+    min-width: 550px;
+    height: 300px;
+}
+
 .project-img {
+
+
+    transform: perspective(100px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+
+
+
     min-width: 550px;
     height: 300px;
     background-size: cover;
     background-position: center;
     border: 1px solid black;
     border-radius: 10px;
-    display: block;
     filter: grayscale(60%)
 }
 
@@ -271,7 +284,118 @@ nav a {
 
 }
 
+/* CONTACT */
 
+.contact {
+    width: 100%;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    width: 78%;
+    left: 11%;
+}
+
+form,
+.profiles {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+}
+
+label {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+form input,
+textarea {
+    margin: 10px 0 25px 0;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    padding: 10px 0;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    cursor: pointer
+}
+
+.email-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    /* margin-top: 200px; */
+    font-size: 1.7rem;
+    font-weight: 200;
+    /* text-align: center; */
+}
+
+.social-media-contact,
+.email-contact {
+    background-color: #fff;
+}
+
+.email-contact span {
+    font-weight: 500;
+}
+
+.social-media-contact {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.social-media-contact a {
+    text-decoration: none;
+    color: #bababa;
+    padding: 0px 15px;
+    transition: .4s;
+}
+
+.social-media-contact a:hover {
+    color: black;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    background-color: #dfdfdf;
+    margin-top: 100px;
+    font-size: 1.1rem;
+}
+
+.social-media-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+}
+
+.link-footer a {
+    margin: 0 5px;
+    color: #000000;
+}
 
 
 @media only screen and (max-width:1200px) {
@@ -299,7 +423,8 @@ nav a {
     /* MY WORK */
 
 
-    .project-img {
+    .project-img,
+    .panel-project {
         min-width: 400px;
         height: 200px;
     }
@@ -314,7 +439,7 @@ nav a {
 @media only screen and (max-width:992px) {
 
     /* MY WORK */
-    .my-work h1 {
+    .title {
         font-size: 4rem;
     }
 
@@ -340,6 +465,32 @@ nav a {
     .project-desription p {
 
         line-height: 1.5rem;
+    }
+
+    /* CONTACT */
+
+    .contact {
+        width: 100%;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    form,
+    .profiles {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .profiles {
+        margin-top: 100px;
+    }
+
+    .social-media-contact {
+        margin-top: 50px;
+
     }
 
 }
@@ -467,6 +618,20 @@ nav a {
         display: none;
     }
 
+    /* FOOTER */
+
+    footer {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+
+    footer * {
+        margin: 10px 0;
+    }
+
 }
 
 
@@ -502,7 +667,7 @@ nav a {
         width: 100%;
     }
 
-    .my-work h1 {
+    .title {
         margin-top: 50px;
         font-size: 3.5rem;
         width: 100%;

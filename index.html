@@ -1,3 +1,4 @@
+<!--Produced by Jarosław Babiak-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +13,12 @@
     <!-- FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400:500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;800&display=swap"
+        rel="stylesheet">
+
+    <!-- SCRIPT -->
+    <script src="https://kit.fontawesome.com/b1b3c3cad3.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -37,10 +43,12 @@
         </ul>
     </nav>
 
+    <div class="decoration-line one"></div>
+    <div class="decoration-line two"></div>
+    <div class="decoration-line three"></div>
+
     <main>
-        <div class="decoration-line one"></div>
-        <div class="decoration-line two"></div>
-        <div class="decoration-line three"></div>
+
         <div class="start-page">
 
             <div class="image">
@@ -52,7 +60,7 @@
             </div>
 
             <div class="start-text">
-                <h1 class="start-title">Hi, I'm <span>Jarosław Babiak</span>. I create websites </h1>
+                <h1 class="start-title">Hi, I'm <span>Jaroslaw Babiak</span>. I create websites </h1>
                 <p>
                     Active at the gym, passionate about juggling, and a bit of beatboxing. Let's explore new
                     possibilities
@@ -61,12 +69,13 @@
             </div>
         </div>
         <div class="my-work">
-            <h1>My work</h1>
+            <h1 class="title">My work</h1>
             <div class="projects">
                 <div class="project">
-                    <a href="https://komornikturek.pl/" target="_blank">
+                    <a class="panel-project" href="https://komornikturek.pl/" target="_blank">
                         <div id="komornik" class="project-img"></div>
                     </a>
+
                     <div class="project-desription">
                         <h2>Komornik Turek</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quo distinctio adipisci
@@ -76,7 +85,7 @@
                     </div>
                 </div>
                 <div class="project reverse">
-                    <a href="https://hulk-factory.pl/index.php" target="_blank">
+                    <a class="panel-project" href="https://hulk-factory.pl/index.php" target="_blank">
                         <div id="hulk-factory" class="project-img"></div>
                     </a>
                     <div class="project-desription">
@@ -88,8 +97,52 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="contact">
+            <h1 class="title">Contact</h1>
+        </div>
+        <div class="contact-container">
+            <form action="form.php" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="textarea">Message</label>
+                <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter your message"></textarea>
+
+                <button>Send</button>
+            </form>
+            <div class="profiles">
+                <div class="email-contact"><span>Email</span>jarekbabiak3@gmail.com</div>
+                <div class="social-media-contact">
+                    <a href="https://github.com/Masohas1" target="_blank"> <i class="fab fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jarek-babiak/" target="_blank"> <i
+                            class="fab fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/jarek.babiak.2" target="_blank"> <i
+                            class="fab fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
 
     </main>
+
+    <footer>
+        <p>Create by Jarosław Babiak &#169; 2024</p>
+        <div class="email-footer">jarekbabiak3@gmail.com</div>
+        <div class="social-media-footer">
+            <p>Social media</p>
+            <div class="link-footer">
+                <a href="https://github.com/Masohas1" target="_blank"> <i class="fab fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jarek-babiak/" target="_blank"> <i
+                        class="fab fa-brands fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/jarek.babiak.2" target="_blank"> <i
+                        class="fab fa-brands fa-facebook"></i></a>
+            </div>
+
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
     <script src="main.js"></script>
