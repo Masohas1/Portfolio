@@ -23,13 +23,13 @@
 
 <body>
 
-    <div class="loader">
+    <!-- <div class="loader">
         <div class="loader-box first">
             <span class="first-name">Jarosław</span>
             <span class="last-name">Babiak</span>
         </div>
         <div class="loader-box second"></div>
-    </div>
+    </div> -->
 
     <nav>
         <a class="name-logo" href="#">Jarosław Babiak</a>
@@ -102,7 +102,7 @@
             <h1 class="title">Contact</h1>
         </div>
         <div class="contact-container">
-            <form action="form.php" method="post">
+            <form action="form.php" method="POST">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name">
 
@@ -112,7 +112,7 @@
                 <label for="textarea">Message</label>
                 <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter your message"></textarea>
 
-                <button>Send</button>
+                <button type="submit" name="submit">Send</button>
             </form>
             <div class="profiles">
                 <div class="email-contact"><span>Email</span>jarekbabiak3@gmail.com</div>

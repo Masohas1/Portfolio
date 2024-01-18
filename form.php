@@ -31,41 +31,40 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['submit']))
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'piterbabiak@gmail.com ';                     //SMTP username
-            $mail->Password   = 'x5fZ%m-!s4MDU49H';                               //SMTP password
+            $mail->Username   = 'piterbabiak@gmail.com';                     //SMTP username
+            $mail->Password   = 'lgjyqbrmzgmkislg';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('kubajonski@onet.pl', 'Kuba');
-            $mail->addAddress('kubajonski@onet.pl');     //Add a recipient
+            $mail->setFrom('jarekbabiak3@gmail.com', 'PORTFOLIO');
+            $mail->addAddress('jarekbabiak3@gmail.com');     //Add a recipient
             //ZAMSIAT KUBAJOSNKI... wpisz swoj email na który maja przychodzic wiadomosci
             //Content
             // $mail->isHTML(true);                                  //Set email format to HTML
 
             $to = $_POST['email'];
             $name = $_POST['name'];
-            $area = $_POST['area'];
+            $area = $_POST['textarea'];
 
-            if ($mail->addReplyTo($to, $tel, $name, $message)) {
+            if ($mail->addReplyTo($to, $name, $area)) {
                 $mail->Subject = 'Kontakt od '.$_POST['email'];
                 $mail->isHTML(false);
                 $mail->Body = <<<EOT
                 Email: {$_POST['email']}
                 Imie i Nazwiso: {$_POST['name']}
-                Wiadomość: {$_POST['area']}
+                Wiadomość: {$_POST['textarea']}
                 EOT;
             }
 
             $mail->send();
             echo 'Message has been sent';
             unset($to, $name, $area);
+            header('Location: index.html');
+            exit();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         } 
-
-        header('Location: index.html');
-        exit();
     }
 
 ?>
