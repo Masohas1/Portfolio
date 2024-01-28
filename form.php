@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['submit']))
+if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         
 
@@ -39,7 +39,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['submit']))
             //Recipients
             $mail->setFrom('jarekbabiak3@gmail.com', 'PORTFOLIO');
             $mail->addAddress('jarekbabiak3@gmail.com');     //Add a recipient
-            //ZAMSIAT KUBAJOSNKI... wpisz swoj email na który maja przychodzic wiadomosci
             //Content
             // $mail->isHTML(true);                                  //Set email format to HTML
 
@@ -60,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['submit']))
             $mail->send();
             echo 'Message has been sent';
             unset($to, $name, $area);
-            header('Location: index.html');
+
             exit();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

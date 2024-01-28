@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jarosław Babiak</title>
 
+    <script src="changeColor.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -23,13 +25,13 @@
 
 <body>
 
-    <!-- <div class="loader">
+    <div class="loader" id="loader">
         <div class="loader-box first">
             <span class="first-name">Jarosław</span>
             <span class="last-name">Babiak</span>
         </div>
         <div class="loader-box second"></div>
-    </div> -->
+    </div>
 
     <nav>
         <a class="name-logo" href="#">Jarosław Babiak</a>
@@ -37,9 +39,9 @@
             <div class="hamburger-line"></div>
         </div>
         <ul class="menu ">
-            <li class="menu-li"><a href="">Start</a></li>
-            <li class="menu-li"><a href="">Work</a></li>
-            <li class="menu-li"><a href="">Contact</a></li>
+            <li class="menu-li"><a href="#start-page">Start</a></li>
+            <li class="menu-li"><a href="#work">Work</a></li>
+            <li class="menu-li"><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -47,9 +49,18 @@
     <div class="decoration-line two"></div>
     <div class="decoration-line three"></div>
 
-    <main>
+    <div class="day-night-mode">
+        <i class=" fas fa-solid fa-sun"></i>
+    </div>
 
-        <div class="start-page">
+    <a href="#start-page">
+        <div class="scroll-up">
+            <i class="fas fa-solid fa-arrow-up"></i>
+        </div>
+    </a>
+
+    <main>
+        <div id="start-page" class="start-page">
 
             <div class="image">
                 <div id="panel">
@@ -68,7 +79,7 @@
                 </p>
             </div>
         </div>
-        <div class="my-work">
+        <div id="work" class="my-work">
             <h1 class="title">My work</h1>
             <div class="projects">
                 <div class="project">
@@ -78,10 +89,11 @@
 
                     <div class="project-desription">
                         <h2>Komornik Turek</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quo distinctio adipisci
-                            accusamus libero vel quos, cum, autem dolore laborum quibusdam recusandae odio ex odit
-                            aperiam aliquam ipsum enim iure. Cupiditate fugiat quia, quo possimus a fugit. Deserunt
-                            nesciunt placeat quam? Dignissimos ipsa aut atque veritatis aspernatur, quaerat iste et?</p>
+                        <p>Creating my first WordPress-based website was a fascinating experience. The biggest challenge
+                            was cleverly integrating a pre-made template with the WordPress hierarchy. Through this
+                            project, I learned to tailor website structures to unique client needs while maintaining
+                            simplicity in content management and updates. The result is not just an aesthetically
+                            pleasing site but also an efficient user experience.</p>
                     </div>
                 </div>
                 <div class="project reverse">
@@ -90,42 +102,48 @@
                     </a>
                     <div class="project-desription">
                         <h2>Hulk Factory</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quo distinctio adipisci
-                            accusamus libero vel quos, cum, autem dolore laborum quibusdam recusandae odio ex odit
-                            aperiam aliquam ipsum enim iure. Cupiditate fugiat quia, quo possimus a fugit. Deserunt
-                            nesciunt placeat quam? Dignissimos ipsa aut atque veritatis aspernatur, quaerat iste et?</p>
+                        <p>Creating a website where the biggest challenge was seamlessly integrating two galleries
+                            without excessive nesting was an inspiring experience for me. I introduced an innovative
+                            solution by designing a side-scrolling gallery, allowing easy navigation between two sets of
+                            photos. Upon selecting a specific car, a dedicated gallery appears, making the site
+                            interactive and engaging for users.</p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="contact">
+        <div id="contact" class="contact">
             <h1 class="title">Contact</h1>
-        </div>
-        <div class="contact-container">
-            <form action="form.php" method="POST">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
+            <div class="contact-container">
+                <form id="emailForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
 
-                <label for="textarea">Message</label>
-                <textarea name="textarea" id="textarea" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
 
-                <button type="submit" name="submit">Send</button>
-            </form>
-            <div class="profiles">
-                <div class="email-contact"><span>Email</span>jarekbabiak3@gmail.com</div>
-                <div class="social-media-contact">
-                    <a href="https://github.com/Masohas1" target="_blank"> <i class="fab fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/jarek-babiak/" target="_blank"> <i
-                            class="fab fa-brands fa-linkedin"></i></a>
-                    <a href="https://www.facebook.com/jarek.babiak.2" target="_blank"> <i
-                            class="fab fa-brands fa-facebook"></i></a>
+                    <label for="textarea">Message</label>
+                    <textarea name="textarea" id="textarea" cols="30" rows="10"
+                        placeholder="Enter your message"></textarea>
+
+                    <button type="button" onclick="sendEmail()" name="submit">Send</button>
+                    <div id="response"></div>
+
+                </form>
+                <div class="profiles">
+                    <div class="email-contact"><span>Email</span>jarekbabiak3@gmail.com</div>
+                    <div class="social-media-contact">
+                        <a href="https://github.com/Masohas1" target="_blank"> <i
+                                class="fab fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jarek-babiak/" target="_blank"> <i
+                                class="fab fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/jarek.babiak.2" target="_blank"> <i
+                                class="fab fa-brands fa-facebook"></i></a>
+                        <a href="CV.pdf" download title="Pobierz CV"> <i class="fas fa-solid fa-file"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer>
@@ -139,6 +157,8 @@
                         class="fab fa-brands fa-linkedin"></i></a>
                 <a href="https://www.facebook.com/jarek.babiak.2" target="_blank"> <i
                         class="fab fa-brands fa-facebook"></i></a>
+                <a href="CV.pdf" download title="Pobierz CV"> <i class="fas fa-solid fa-file"></i></a>
+
             </div>
 
         </div>
